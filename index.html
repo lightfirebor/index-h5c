@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务维护中</title>
+    <!-- 载入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 设置 Inter 字体作为首选字体 */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+
+    <!-- 维护通知卡片 -->
+    <div class="w-full max-w-lg bg-white p-8 sm:p-12 rounded-xl shadow-2xl text-center">
+
+        <!-- 维护图标 -->
+        <div class="flex justify-center mb-6">
+            <!-- 使用一个大的、醒目的图标或表情符号 -->
+            <span class="text-7xl text-indigo-600 animate-spin-slow">
+                ⚙️
+            </span>
+        </div>
+
+        <!-- 标题 -->
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">
+            服务维护中
+        </h1>
+
+        <!-- 简短说明 -->
+        <p class="text-xl text-gray-600 mb-6">
+            我们正在努力改进服务，以便为您提供更好的体验。
+        </p>
+
+        <!-- 详细信息 -->
+        <div class="bg-indigo-50 border-l-4 border-indigo-500 text-indigo-800 p-4 rounded-lg text-left shadow-inner">
+            <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <p class="font-semibold">预计恢复时间：</p>
+            </div>
+            <p class="mt-2 pl-9 text-base">
+                北京时间 2025 年 10 月 6 日 02:00
+            </p>
+        </div>
+
+        <!-- 脚注/联系信息 -->
+        <p class="mt-8 text-sm text-gray-500">
+            感谢您的耐心等待，给您带来的不便深表歉意。
+        </p>
+
+    </div>
+
+    <script>
+        // 简单的 CSS 动画来让齿轮图标更生动
+        // 注意：Tailwind 3+ 支持自定义动画，这里使用一个简单的内联 CSS 变量和 Tailwind utility
+        tailwind.config = {
+            theme: {
+                extend: {
+                    keyframes: {
+                        'spin-slow': {
+                            '0%, 100%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' },
+                        }
+                    },
+                    animation: {
+                        'spin-slow': 'spin-slow 5s linear infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
